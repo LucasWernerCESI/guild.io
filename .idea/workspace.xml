@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="109875dd-cc49-4cbf-8bfe-7f3bc7c66155" name="Default Changelist" comment="[Packages] React and Material UI install">
+    <list default="true" id="109875dd-cc49-4cbf-8bfe-7f3bc7c66155" name="Default Changelist" comment="[Packages] React Router DOM install">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/README.old.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +53,7 @@
       <updated>1624258724703</updated>
       <workItem from="1624258728479" duration="614000" />
       <workItem from="1624261031298" duration="179000" />
-      <workItem from="1624261240469" duration="1536000" />
+      <workItem from="1624261240469" duration="4247000" />
     </task>
     <task id="LOCAL-00001" summary="[Organization] Directories creation">
       <created>1624258913488</created>
@@ -80,7 +76,21 @@
       <option name="project" value="LOCAL" />
       <updated>1624261551510</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[Packages] React Router DOM install">
+      <created>1624263747876</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1624263747876</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[Packages] React Router DOM install">
+      <created>1624263804912</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1624263804912</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +112,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="[Organization] Directories creation" />
     <MESSAGE value="[Packages] React and Material UI install" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Packages] React and Material UI install" />
+    <MESSAGE value="[Packages] React Router DOM install" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Packages] React Router DOM install" />
   </component>
 </project>
