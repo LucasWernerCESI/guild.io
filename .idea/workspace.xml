@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="109875dd-cc49-4cbf-8bfe-7f3bc7c66155" name="Default Changelist" comment="[Organization] Directories creation">
-      <change afterPath="$PROJECT_DIR$/Api/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="109875dd-cc49-4cbf-8bfe-7f3bc7c66155" name="Default Changelist" comment="[Organization] Directories creation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,7 +13,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="App" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,6 +46,7 @@
       <option name="presentableId" value="Default" />
       <updated>1624258724703</updated>
       <workItem from="1624258728479" duration="614000" />
+      <workItem from="1624261031298" duration="179000" />
     </task>
     <task id="LOCAL-00001" summary="[Organization] Directories creation">
       <created>1624258913488</created>
@@ -57,7 +55,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624258913488</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="[Organization] Directories creation">
+      <created>1624261090253</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1624261090253</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -73,6 +78,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[Organization] Directories creation" />
