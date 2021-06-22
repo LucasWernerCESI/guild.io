@@ -1,0 +1,15 @@
+{
+    "name": "lucie/api",
+    "autoload": {
+        "psr-4": {
+            "Lucie\\Api\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lucie",
+            "email": "desmons.lucie@gmail.com"
+        }
+    ],
+    "require": {}
+}
