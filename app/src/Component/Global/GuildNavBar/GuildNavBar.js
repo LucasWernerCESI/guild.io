@@ -1,10 +1,25 @@
 import { AppBar, Container, Tab, Tabs } from "@material-ui/core";
 import React from 'react';
-import "./GuildNavBar.css";
 import { useHistory } from "react-router-dom";
 import { GuildAccountIcon } from "../GuildAccountIcon/GuildAccountIcon";
+import {makeStyles} from "@material-ui/styles";
+
+const useStyles = makeStyles( {
+    appBar: {
+        marginBottom: "1.5%"
+    },
+    navContainer: {
+        display: "grid",
+        gridTemplateColumns: "1fr .25fr"
+    },
+    tabsGroup: {
+        width: "auto"
+    }
+} )
 
 export function GuildNavBar ( { pageList } ) {
+
+    const classes = useStyles();
 
     const [value, setValue] = React.useState(0);
     let history = useHistory();
@@ -19,9 +34,9 @@ export function GuildNavBar ( { pageList } ) {
     let tabList = pageList.map( ( el ) => <Tab key={ el.toLowerCase() + "_nav" } label={ el.toLowerCase() } /> );
 
     return (
-        <AppBar position="static" className={"app-bar"}>
-            <Container className={"nav-container"}>
-                <Tabs className={"tabs-group"} indicatorColor="secondary" textColor="secondary" value={value} onChange={handleChange} aria-label="navigation tabs">
+        <AppBar position="static" className={ classes.appBar }>
+            <Container className={ classes.navContainer }>
+                <Tabs className={ classes.navContainer } indicatorColor="secondary" textColor="secondary" value={value} onChange={handleChange} aria-label="navigation tabs">
                     { tabList }
                 </Tabs>
                 <GuildAccountIcon/>

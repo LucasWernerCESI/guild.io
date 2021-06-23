@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="109875dd-cc49-4cbf-8bfe-7f3bc7c66155" name="Default Changelist" comment="[Implementation] Different routes and Login handler">
-      <change afterPath="$PROJECT_DIR$/app/src/Component/DataHandler/AccessHandler/AccessHandler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildAccountIcon/GuildAccountIcon.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildAccountIcon/GuildAccountIcon.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildAccountIcon/GuildAccountIcon.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildAccountIcon/GuildAccountIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildAccountIcon/GuildAccountIcon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Guild.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Guild.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Support.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Support.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/User.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +83,7 @@
       <workItem from="1624261031298" duration="179000" />
       <workItem from="1624261240469" duration="6106000" />
       <workItem from="1624343847855" duration="13227000" />
-      <workItem from="1624430385561" duration="12136000" />
+      <workItem from="1624430385561" duration="15510000" />
     </task>
     <task id="LOCAL-00001" summary="[Organization] Directories creation">
       <created>1624258913488</created>
@@ -143,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624435798739</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="[Implementation] Different routes and Login handler">
+      <created>1624448046260</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1624448046260</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

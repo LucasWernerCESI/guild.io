@@ -8,7 +8,7 @@ import {
     useHistory
 } from "react-router-dom";
 import { Home } from "./Component/Layout/Home.js";
-import { Container, CssBaseline, useMediaQuery } from "@material-ui/core";
+import {Container, CssBaseline, Grid, useMediaQuery} from "@material-ui/core";
 import { GuildNavBar } from "./Component/Global/GuildNavBar/GuildNavBar";
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { GuildFooter } from "./Component/Global/GuildFooter/GuildFooter";
@@ -26,7 +26,7 @@ function App() {
 
     // Handle login requests and redirections
     if( storage.getItem( "isLogged" ) === null || storage.getItem( "isLogged" ) === "0" ) {
-        storage.setItem( "isLogged", "0" );
+        storage.setItem( "isLogged", "1" );
         storage.setItem( "userName", "Guest" );
         storage.setItem( "hashedPwd", "" );
     } else {
