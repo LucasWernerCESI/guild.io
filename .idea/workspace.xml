@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="109875dd-cc49-4cbf-8bfe-7f3bc7c66155" name="Default Changelist" comment="[Organization] Layouts and global components structure + Router">
+    <list default="true" id="109875dd-cc49-4cbf-8bfe-7f3bc7c66155" name="Default Changelist" comment="[Implementation] Different routes and Login handler">
+      <change afterPath="$PROJECT_DIR$/app/src/Component/DataHandler/AccessHandler/AccessHandler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildAccountIcon/GuildAccountIcon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildAccountIcon/GuildAccountIcon.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Guild.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Guild.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Support.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Support.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/User.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,11 +66,11 @@
       <recent name="C:\Users\Proto\Desktop\Guild\guild.io\Api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Proto\Desktop\Guild\guild.io\app\src\Component\Global\GuildAccountIcon" />
       <recent name="C:\Users\Proto\Desktop\Guild\guild.io\app\src\Component\Global\GuildNavBar" />
       <recent name="C:\Users\Proto\Desktop\Guild\guild.io\app\src\Component\Global\GuildFooter" />
       <recent name="C:\Users\Proto\Desktop\Guild\guild.io\app\src\Component\Global" />
       <recent name="C:\Users\Proto\Desktop\Guild\guild.io\app\src\Component\Layout" />
-      <recent name="C:\Users\Proto\Desktop\Guild\guild.io\app\public" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -76,7 +85,7 @@
       <workItem from="1624261031298" duration="179000" />
       <workItem from="1624261240469" duration="6106000" />
       <workItem from="1624343847855" duration="13227000" />
-      <workItem from="1624430385561" duration="5312000" />
+      <workItem from="1624430385561" duration="12136000" />
     </task>
     <task id="LOCAL-00001" summary="[Organization] Directories creation">
       <created>1624258913488</created>
@@ -127,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624372022408</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="[Packages] Material UI Icons Install">
+      <created>1624435798739</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1624435798739</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +168,8 @@
     <MESSAGE value="[Packages] React Router DOM install" />
     <MESSAGE value="[Packages] React-Chart.js install" />
     <MESSAGE value="[Organization] Layouts and global components structure + Router" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Organization] Layouts and global components structure + Router" />
+    <MESSAGE value="[Packages] Material UI Icons Install" />
+    <MESSAGE value="[Implementation] Different routes and Login handler" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Implementation] Different routes and Login handler" />
   </component>
 </project>

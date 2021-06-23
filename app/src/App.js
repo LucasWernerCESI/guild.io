@@ -4,7 +4,8 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import {
     BrowserRouter as Router,
     Switch,
-    Route
+    Route,
+    useHistory
 } from "react-router-dom";
 import { Home } from "./Component/Layout/Home.js";
 import { Container, CssBaseline, useMediaQuery } from "@material-ui/core";
@@ -20,11 +21,26 @@ import { Support } from "./Component/Layout/Support";
 
 function App() {
 
+    // Local Storage handling
+    const storage = localStorage;
+
+    // Handle login requests and redirections
+    if( storage.getItem( "isLogged" ) === null || storage.getItem( "isLogged" ) === "0" ) {
+        storage.setItem( "isLogged", "0" );
+        storage.setItem( "userName", "Guest" );
+        storage.setItem( "hashedPwd", "" );
+    } else {
+
+    }
+
+    console.log( storage );
+
+    // DarkMode and Material Theming
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
     const theme = React.useMemo( () => createMuiTheme({
                 palette: {
-                    type: 'light',
+                    type: 'dark',
                     text: {
                         primary: "#FFFFFF",
                         secondary: fade("#FFFFFF", .75),
@@ -54,7 +70,7 @@ function App() {
             <CssBaseline/>
             <Router>
 
-                <GuildNavBar/>
+                <GuildNavBar pageList={["home", "guild", "support"]}/>
 
                 <Container>
 

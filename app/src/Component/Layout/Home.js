@@ -1,9 +1,9 @@
-import {Button, Container, Grid, MuiThemeProvider} from "@material-ui/core";
-import {createMuiTheme} from "@material-ui/core/styles";
+import { Grid } from "@material-ui/core";
+import { AccessHandler } from "../DataHandler/AccessHandler/AccessHandler";
 
 export function Home ( ) {
-    
 
+    AccessHandler();
 
     return (
         <Grid>

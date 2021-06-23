@@ -1,32 +1,30 @@
-import {AppBar, Button, Container, IconButton, Tab, Tabs, Toolbar, Typography} from "@material-ui/core";
+import { AppBar, Container, Tab, Tabs } from "@material-ui/core";
 import React from 'react';
-import { Link } from "react-router-dom";
+import "./GuildNavBar.css";
+import { useHistory } from "react-router-dom";
+import { GuildAccountIcon } from "../GuildAccountIcon/GuildAccountIcon";
 
-export function GuildNavBar ( ) {
+export function GuildNavBar ( { pageList } ) {
 
     const [value, setValue] = React.useState(0);
+    let history = useHistory();
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
+    // Changes the active tab and route
+    const handleChange = ( ev, newVal ) => {
+        setValue(newVal);
+        history.push( pageList[newVal] !== "home" ? pageList[newVal] : '' );
     };
 
+    // Generates as many nav tabs as we have entries in pageList
+    let tabList = pageList.map( ( el ) => <Tab key={ el.toLowerCase() + "_nav" } label={ el.toLowerCase() } /> );
+
     return (
-        <AppBar position="static">
-            <Container>
-                <Tabs indicatorColor="secondary" textColor="secondary" value={value} onChange={handleChange} aria-label="tabs as navigation">
-                    <Tab label={
-                        <Link to={"/"}>Home</Link>
-                    } />
-
-                    <Tab label={
-                        <Link to={"/guild"}>Guild</Link>
-                    } />
-
-                    <Link to={"/support"}>
-                        <Tab label="Support"/>
-                    </Link>
-
+        <AppBar position="static" className={"app-bar"}>
+            <Container className={"nav-container"}>
+                <Tabs className={"tabs-group"} indicatorColor="secondary" textColor="secondary" value={value} onChange={handleChange} aria-label="navigation tabs">
+                    { tabList }
                 </Tabs>
+                <GuildAccountIcon/>
             </Container>
         </AppBar>
     )
