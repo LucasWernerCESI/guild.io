@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="109875dd-cc49-4cbf-8bfe-7f3bc7c66155" name="Default Changelist" comment="[Packages] React-Chart.js install">
-      <change afterPath="$PROJECT_DIR$/app/public/usericon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Application.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Guild.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/User.js" afterDir="false" />
+    <list default="true" id="109875dd-cc49-4cbf-8bfe-7f3bc7c66155" name="Default Changelist" comment="[Organization] Layouts and global components structure + Router">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -83,7 +75,8 @@
       <workItem from="1624258728479" duration="614000" />
       <workItem from="1624261031298" duration="179000" />
       <workItem from="1624261240469" duration="6106000" />
-      <workItem from="1624343847855" duration="12653000" />
+      <workItem from="1624343847855" duration="13227000" />
+      <workItem from="1624430385561" duration="5312000" />
     </task>
     <task id="LOCAL-00001" summary="[Organization] Directories creation">
       <created>1624258913488</created>
@@ -127,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624276642460</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="[Organization] Layouts and global components structure + Router">
+      <created>1624372022408</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1624372022408</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +151,7 @@
     <MESSAGE value="[Packages] React and Material UI install" />
     <MESSAGE value="[Packages] React Router DOM install" />
     <MESSAGE value="[Packages] React-Chart.js install" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Packages] React-Chart.js install" />
+    <MESSAGE value="[Organization] Layouts and global components structure + Router" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Organization] Layouts and global components structure + Router" />
   </component>
 </project>
