@@ -14,7 +14,7 @@ class Database extends PDO {
 
     private static $connection = null;
 
-    private function __construct ( string $dns, string $username, string $password, ?array $options = null ) {
+     function __construct ( string $dns, string $username, string $password, ?array $options = null ) {
         parent::__construct ( $dns, $username, $password, $options );
     }
 
@@ -26,7 +26,7 @@ class Database extends PDO {
     public static function getConnection () : Database {
 
         if(is_null( self::$connection )) {
-            $file = 'settings.ini';
+            $file = dirname(__DIR__, 1) . '/config/settings.ini';
 
             if (!$settings = parse_ini_file($file, TRUE)) throw new Exception('Unable to open ' . $file . '.');
 

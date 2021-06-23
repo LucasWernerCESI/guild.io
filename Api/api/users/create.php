@@ -1,6 +1,8 @@
 <?php
 
-include_once(dirname(__DIR__) . '../vendor/autoload.php');
+
+
+include('../../vendor/autoload.php');
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -10,12 +12,12 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 // guild.io/Api/api/users/create.php
 
-use Classes\Database;
-use Classes\User;
+
 
 // $db = Database::getConnection();
 
 $item = new User(Database::getConnection());
+
 
 $data = json_decode(file_get_contents("php://input"));
 

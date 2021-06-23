@@ -2,18 +2,20 @@
 
 namespace Classes;
 
+
+use Classes\Database;
 use DateTime;
 use PDO;
-use Classes\Database;
 
-class User {
+class User
+{
 
 
     // Connection
-    private $conn;
+    private $connection;
 
     // Table
-    private $db_table = "guild";
+    private $db_table = "users";
 
     // Columns
     public $id;
@@ -27,23 +29,38 @@ class User {
     public $gameId;
     public $languageId;
 
-
     // Db connection
-    public function __construct(Database $connection, string $pseudo, string $email, string $creationDate, string $hashedPassword, string $birthday, int $guildId, int $gameId, int $roleId, int $languageId ) {
+
+    /**
+     * @throws \Exception
+     * @var \Classes\Database
+     */
+
+
+    public function __construct(Database $connection, string $pseudo, string $email, string $creationDate, string $hashedPassword, string $birthday, int $guildId, int $gameId, int $roleId, int $languageId)
+    {
         $this->connection = $connection;
         $this->pseudo = $pseudo;
         $this->email = $email;
-        $this->creationDate = new DateTime( $creationDate );
+        $this->creationDate = new DateTime($creationDate);
         $this->hashedPassword = $hashedPassword;
-        $this->birthday = new DateTime( $birthday );
+        $this->birthday = new DateTime($birthday);
         $this->roleId = $roleId;
         $this->guildId = $guildId;
         $this->gameId = $gameId;
         $this->languageId = $languageId;
     }
 
+    // GET ALL
+    public static function listUsers(){
+        $sqlQuery = "SELECT * FROM " . self::$db_table;
+        $stmt = self::$connection->prepare($sqlQuery);
+        $stmt->execute();
+        return $stmt;
+    }
+
     // CREATE
-    public function createUser()
+    public function createUser(): bool
     {
         $sqlQuery = "INSERT INTO
                         " . $this->db_table . "
@@ -59,7 +76,7 @@ class User {
                         languageId = :languageId
                         ";
 
-        $stmt = $this->conn->prepare($sqlQuery);
+        $stmt = $this->connection->prepare($sqlQuery);
 
         // sanitize
         $this->pseudo = htmlspecialchars(strip_tags($this->pseudo));
@@ -93,18 +110,22 @@ class User {
     {
         $sqlQuery = "SELECT
                         id, 
-                        name, 
+                        pseudo, 
                         email, 
-                        age, 
-                        designation, 
-                        created
+                        birthday, 
+                        hashedPassword, 
+                        creationDate,
+                        roleId,
+                        guildId,
+                        gameId,
+                        languageId
                       FROM
                         " . $this->db_table . "
                     WHERE 
                        id = ?
                     LIMIT 0,1";
 
-        $stmt = $this->conn->prepare($sqlQuery);
+        $stmt = $this->connection->prepare($sqlQuery);
 
         $stmt->bindParam(1, $this->id);
 
@@ -112,42 +133,56 @@ class User {
 
         $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        $this->name = $dataRow['name'];
+        $this->pseudo = $dataRow['pseudo'];
         $this->email = $dataRow['email'];
-        $this->age = $dataRow['age'];
-        $this->designation = $dataRow['designation'];
-        $this->created = $dataRow['created'];
+        $this->birthday = $dataRow['birthday'];
+        $this->hashedPassword = $dataRow['hashedPassword'];
+        $this->creationDate = $dataRow['creationDate'];
+        $this->roleId = $dataRow['roleId'];
+        $this->guildId = $dataRow['guildId'];
+        $this->gameId = $dataRow['gameId'];
+        $this->languageId = $dataRow['languageId'];
     }
 
     // UPDATE
-    public function updateEmployee()
+    public function updateUser()
     {
         $sqlQuery = "UPDATE
                         " . $this->db_table . "
                     SET
-                        name = :name, 
+                        pseudo = :pseudo, 
                         email = :email, 
-                        age = :age, 
-                        designation = :designation, 
-                        created = :created
+                        birthday = :birthday, 
+                        hashedPassword = :hashedPassword, 
+                        creationDate = :creationDate,
+                        roleId = :roleId,
+                        guildId = :guildId,
+                        gameId =:gameId,
+                        languageId =:languageId
                     WHERE 
                         id = :id";
 
-        $stmt = $this->conn->prepare($sqlQuery);
+        $stmt = $this->connection->prepare($sqlQuery);
 
-        $this->name = htmlspecialchars(strip_tags($this->name));
+        $this->pseudo = htmlspecialchars(strip_tags($this->pseudo));
         $this->email = htmlspecialchars(strip_tags($this->email));
-        $this->age = htmlspecialchars(strip_tags($this->age));
-        $this->designation = htmlspecialchars(strip_tags($this->designation));
-        $this->created = htmlspecialchars(strip_tags($this->created));
+        $this->hashedPassword = htmlspecialchars(strip_tags($this->hashedPassword));
+        $this->roleId = htmlspecialchars(strip_tags($this->roleId));
+        $this->guildId = htmlspecialchars(strip_tags($this->guildId));
+        $this->gameId = htmlspecialchars(strip_tags($this->gameId));
+        $this->languageId = htmlspecialchars(strip_tags($this->languageId));
         $this->id = htmlspecialchars(strip_tags($this->id));
 
         // bind data
-        $stmt->bindParam(":name", $this->name);
+        $stmt->bindParam(":pseudo", $this->pseudo);
         $stmt->bindParam(":email", $this->email);
-        $stmt->bindParam(":age", $this->age);
-        $stmt->bindParam(":designation", $this->designation);
-        $stmt->bindParam(":created", $this->created);
+        $stmt->bindParam(":birthday", $this->birthday);
+        $stmt->bindParam(":hashedPassword", $this->hashedPassword);
+        $stmt->bindParam(":creationDate", $this->creationDate);
+        $stmt->bindParam(":roleId", $this->roleId);
+        $stmt->bindParam(":guildId", $this->guildId);
+        $stmt->bindParam(":gameId", $this->gameId);
+        $stmt->bindParam(":languageId", $this->languageId);
         $stmt->bindParam(":id", $this->id);
 
         if ($stmt->execute()) {
@@ -160,7 +195,7 @@ class User {
     function deleteEmployee()
     {
         $sqlQuery = "DELETE FROM " . $this->db_table . " WHERE id = ?";
-        $stmt = $this->conn->prepare($sqlQuery);
+        $stmt = $this->connection->prepare($sqlQuery);
 
         $this->id = htmlspecialchars(strip_tags($this->id));
 
