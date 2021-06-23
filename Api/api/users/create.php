@@ -1,6 +1,6 @@
 <?php
 
-include_once(dirname(__DIR__) . '../vendor/autoload.php');
+include_once(dirname(__DIR__, 2) . '/vendor/autoload.php');
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
