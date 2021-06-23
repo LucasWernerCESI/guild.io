@@ -1,31 +1,38 @@
 <?php
+
+include_once(dirname(__DIR__) . '../vendor/autoload.php');
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-// api/users/create.php
+// guild.io/Api/api/users/create.php
 
-include_once '../config/database.php';
-include_once '../class/User.php';
+use Classes\Database;
+use Classes\User;
 
-$database = new Database();
-$db = $database->getConnection();
+// $db = Database::getConnection();
 
-$item = new User($db);
+$item = new User(Database::getConnection());
 
 $data = json_decode(file_get_contents("php://input"));
 
-$item->name = $data->name;
+$item->pseudo = $data->pseudo;
 $item->email = $data->email;
-$item->age = $data->age;
-$item->designation = $data->designation;
-$item->created = date('Y-m-d H:i:s');
+$item->birthday = date('Y-m-d H:i:s');
+$item->hashedPassword = $data->hashedPassword;
+$item->creationDate = date('Y-m-d H:i:s');
+$item->roleId = $data->roleId;
+$item->guildId = $data->guildId;
+$item->gameId = $data->gameId;
+$item->languageId = $data->languageId;
+
 
 if($item->createUser()){
-    echo 'Employee created successfully.';
+    echo "Utilisateur créé avec succès.";
 } else{
-    echo 'Employee could not be created.';
+    echo "La création de l'utilisateur a échoué.";
 }
 ?>
