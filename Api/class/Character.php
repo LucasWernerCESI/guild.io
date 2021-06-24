@@ -44,6 +44,14 @@ class Character
     }
 
 
+    // GET ALL
+    public function getAllCharacters(){
+        $sqlQuery = "SELECT id, userId, raceId, level, professionId, classId, factionId FROM " . $this->db_table ;
+        $stmt = $this->connection->prepare($sqlQuery);
+        $stmt->execute();
+        return $stmt;
+    }
+
     // CREATE
     public function createCharacter()
     {
