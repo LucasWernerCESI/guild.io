@@ -31,9 +31,10 @@ class Character
      */
 
 
-    public function __construct(Database $connection,?int $userId = null, ?int $raceId = null, ?int $level = null, ?int $professionId = null, ?int $classId = null, ?int $factionId = null)
+    public function __construct(Database $connection, ?int $id = null, ?int $userId = null, ?int $raceId = null, ?int $level = null, ?int $professionId = null, ?int $classId = null, ?int $factionId = null)
     {
         $this->connection = $connection;
+        $this->id = $id;
         $this->userId = $userId;
         $this->raceId = $raceId;
         $this->level = $level;
@@ -88,11 +89,12 @@ class Character
     {
         $sqlQuery = "SELECT
                         id,
-                        gameId, 
-                        name, 
-                        text, 
-                        blazon, 
-                        creationDate
+                        userId, 
+                        raceId, 
+                        level, 
+                        professionId, 
+                        classId,
+                        factionId
                       FROM
                         " . $this->db_table . "
                     WHERE 
@@ -108,11 +110,12 @@ class Character
         $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
 
         $this->id = $dataRow['id'];
-        $this->gameId = $dataRow['gameId'];
-        $this->name = $dataRow['name'];
-        $this->text = $dataRow['text'];
-        $this->blazon = $dataRow['blazon'];
-        $this->creationDate = $dataRow['creationDate'];
+        $this->userId = $dataRow['userId'];
+        $this->raceId = $dataRow['raceId'];
+        $this->level = $dataRow['level'];
+        $this->professionId = $dataRow['professionId'];
+        $this->classId = $dataRow['classId'];
+        $this->factionId = $dataRow['factionId'];
     }
 
     // UPDATE
