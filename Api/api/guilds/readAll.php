@@ -36,9 +36,9 @@ try {
             "id" => $row["id"],  //[liste]
             "name" => $row["name"],
             "text" => $row["text"],
-            "email" => $row["blazon"],
+            "blazon" => $row["blazon"],
             "creationDate" => $row["creationDate"],
-            "age" => $row["gameId"]
+            "gameId" => $row["gameId"]
         );
 
         array_push($guildsArray, $e); // stock les résultats dans un tableau

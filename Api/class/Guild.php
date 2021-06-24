@@ -101,12 +101,12 @@ class Guild
                       FROM
                         " . $this->db_table . "
                     WHERE 
-                       id = ?
+                       name = ?
                     LIMIT 0,1";
 
         $stmt = $this->connection->prepare($sqlQuery);
 
-        $stmt->bindParam(1, $this->id);
+        $stmt->bindParam(1, $this->name);
 
         $stmt->execute();
 
