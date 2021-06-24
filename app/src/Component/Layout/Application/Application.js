@@ -4,6 +4,8 @@ import React from 'react';
 
 export function Application () {
 
+    AccessController();
+
     let { guildId } = useParams();
     const storage = localStorage;
 

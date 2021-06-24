@@ -3,6 +3,8 @@ import { AccessController } from "../Controller/AccessController/AccessControlle
 
 export function Guild () {
 
+    AccessController();
+
     return (
         <>
             GUILD !

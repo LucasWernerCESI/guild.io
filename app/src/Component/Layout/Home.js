@@ -3,6 +3,8 @@ import { AccessController } from "../Controller/AccessController/AccessControlle
 
 export function Home() {
 
+    AccessController();
+
     return (
 
         <Grid>

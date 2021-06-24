@@ -2,6 +2,8 @@ import { AccessController } from "../Controller/AccessController/AccessControlle
 
 export function NotFound () {
 
+    AccessController();
+
     return (
         <>
             404 Not Found
