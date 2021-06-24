@@ -22,8 +22,6 @@ import { AuthStatusController } from "./Component/Controller/AuthStatusControlle
 
 function App() {
 
-    localStorage.clear();
-
     AuthStatusController();
 
     // DarkMode and Material Theming
