@@ -32,9 +32,10 @@ class Guild
      */
 
 
-    public function __construct(Database $connection, string $name = "", string $text = "", string $blazon = "", string $creationDate = "", ?int $gameId = null)
+    public function __construct(Database $connection, ?int $id = null, string $name = "", string $text = "", string $blazon = "", string $creationDate = "", ?int $gameId = null)
     {
         $this->connection = $connection;
+        $this->id = $id;
         $this->gameId = $gameId;
         $this->name = $name;
         $this->text = $text;
@@ -101,12 +102,12 @@ class Guild
                       FROM
                         " . $this->db_table . "
                     WHERE 
-                       name = ?
+                       id = ?
                     LIMIT 0,1";
 
         $stmt = $this->connection->prepare($sqlQuery);
 
-        $stmt->bindParam(1, $this->name);
+        $stmt->bindParam(1, $this->id);
 
         $stmt->execute();
 

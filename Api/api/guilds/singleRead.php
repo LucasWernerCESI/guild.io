@@ -22,15 +22,15 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 try {
     $receivedData = json_decode(file_get_contents("php://input"));
 
-    $item = new Guild(Database::getConnection(), $receivedData->name);
+    $item = new Guild(Database::getConnection(), $receivedData->id);
 
         $item->getSingleGuild();
 
-// Recherche de la guilde via son nom
+// Recherche de la guilde via son id
 
-        if ($item->name != null) {
+        if ($item->id != null) {
             // create array
-            $user_arr = array(
+            $guild_arr = array(
                 "id" => $item->id,
                 "name" => $item->name,
                 "text" => $item->text,
@@ -41,7 +41,7 @@ try {
 
 
             http_response_code(200);
-            echo json_encode($user_arr);
+            echo json_encode($guild_arr);
         } else {
             http_response_code(404);
             echo json_encode("Guild not found.");

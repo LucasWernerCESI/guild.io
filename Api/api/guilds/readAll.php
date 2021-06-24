@@ -24,8 +24,6 @@ try {
     if($itemCount > 0){
 
         $guildsArray = array();
-        // $guildsArray["body"] = array();
-       // $guildsArray["itemCount"] = $itemCount;
 
         // 1 statement = ensemble de données de mon mon résultat de ma requête SQL --> marqueur qui se met dans la mémoire du pc -> le statement c'est un pointeur --> ensemble de cases
         // BDD = 1 enregistrement = plusieurs champs
