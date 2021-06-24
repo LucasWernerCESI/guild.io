@@ -71,7 +71,6 @@ class Application
         $this->guildId = htmlspecialchars(strip_tags($this->guildId));
         $this->motivation = htmlspecialchars(strip_tags($this->motivation));
         $this->PVP_or_PVE = htmlspecialchars(strip_tags($this->PVP_or_PVE));
-        $this->PVP_or_PVE = htmlspecialchars(strip_tags($this->PVP_or_PVE));
 
         $dateCreationDate = $this->creationDate->format('Y-m-d H:i:s');
 
@@ -95,11 +94,10 @@ class Application
         $sqlQuery = "SELECT
                         id,
                         userId, 
-                        raceId, 
-                        level, 
-                        professionId, 
-                        classId,
-                        factionId
+                        guildId, 
+                        motivation, 
+                        PVP_or_PVE, 
+                        creationDate
                       FROM
                         " . $this->db_table . "
                     WHERE 
@@ -116,11 +114,10 @@ class Application
 
         $this->id = $dataRow['id'];
         $this->userId = $dataRow['userId'];
-        $this->raceId = $dataRow['raceId'];
-        $this->level = $dataRow['level'];
-        $this->professionId = $dataRow['professionId'];
-        $this->classId = $dataRow['classId'];
-        $this->factionId = $dataRow['factionId'];
+        $this->guildId = $dataRow['guildId'];
+        $this->motivation = $dataRow['motivation'];
+        $this->PVP_or_PVE = $dataRow['PVP_or_PVE'];
+        $this->creationDate = $dataRow['creationDate'];
     }
 
     // UPDATE
