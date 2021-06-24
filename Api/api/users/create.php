@@ -1,6 +1,9 @@
 <?php
 
-include_once(dirname(__DIR__) . '../vendor/autoload.php');
+use Classes\Database;
+use Classes\User;
+
+include_once('../../vendor/autoload.php');
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -10,29 +13,24 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 // guild.io/Api/api/users/create.php
 
-use Classes\Database;
-use Classes\User;
+try {
 
-// $db = Database::getConnection();
+    $data = json_decode(file_get_contents("php://input"));
 
-$item = new User(Database::getConnection());
-
-$data = json_decode(file_get_contents("php://input"));
-
-$item->pseudo = $data->pseudo;
-$item->email = $data->email;
-$item->birthday = date('Y-m-d H:i:s');
-$item->hashedPassword = $data->hashedPassword;
-$item->creationDate = date('Y-m-d H:i:s');
-$item->roleId = $data->roleId;
-$item->guildId = $data->guildId;
-$item->gameId = $data->gameId;
-$item->languageId = $data->languageId;
+    $item = new User(Database::getConnection(), $data->pseudo,$data->email, "now", $data->hashedPassword,$data->birthday,$data->guildId,  $data->gameId, $data->roleId, $data->languageId);
 
 
-if($item->createUser()){
-    echo "Utilisateur créé avec succès.";
-} else{
-    echo "La création de l'utilisateur a échoué.";
+
+    var_dump($data);
+
+    if($item->createUser()){
+        echo "Utilisateur créé avec succès.";
+    } else{
+        echo "La création de l'utilisateur a échoué.";
+    }
+} catch (Exception $e) {
 }
+
+
+
 ?>

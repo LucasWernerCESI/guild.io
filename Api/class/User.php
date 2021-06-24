@@ -5,6 +5,7 @@ namespace Classes;
 
 use Classes\Database;
 use DateTime;
+use DateTimeZone;
 use PDO;
 
 class User
@@ -42,25 +43,17 @@ class User
         $this->connection = $connection;
         $this->pseudo = $pseudo;
         $this->email = $email;
-        $this->creationDate = new DateTime($creationDate);
+        $this->creationDate = new DateTime($creationDate, new DateTimeZone('Europe/Paris'));
         $this->hashedPassword = $hashedPassword;
-        $this->birthday = new DateTime($birthday);
+        $this->birthday = new DateTime($birthday, new DateTimeZone('Europe/Paris'));
         $this->roleId = $roleId;
         $this->guildId = $guildId;
         $this->gameId = $gameId;
         $this->languageId = $languageId;
     }
 
-    // GET ALL
-    public static function listUsers(){
-        $sqlQuery = "SELECT * FROM " . self::$db_table;
-        $stmt = self::$connection->prepare($sqlQuery);
-        $stmt->execute();
-        return $stmt;
-    }
-
     // CREATE
-    public function createUser(): bool
+    public function createUser()
     {
         $sqlQuery = "INSERT INTO
                         " . $this->db_table . "
@@ -87,12 +80,15 @@ class User
         $this->gameId = htmlspecialchars(strip_tags($this->gameId));
         $this->languageId = htmlspecialchars(strip_tags($this->languageId));
 
+        $dateBirthday = $this->birthday->format('Y-m-d H:i:s');
+        $dateCreationDate = $this->creationDate->format('Y-m-d H:i:s');
+
         // bind data
         $stmt->bindParam(":pseudo", $this->pseudo);
         $stmt->bindParam(":email", $this->email);
-        $stmt->bindParam(":birthday", $this->birthday);
+        $stmt->bindParam(":birthday", $dateBirthday);
+        $stmt->bindParam(":creationDate", $dateCreationDate);
         $stmt->bindParam(":hashedPassword", $this->hashedPassword);
-        $stmt->bindParam(":creationDate", $this->creationDate);
         $stmt->bindParam(":roleId", $this->roleId);
         $stmt->bindParam(":guildId", $this->guildId);
         $stmt->bindParam(":gameId", $this->gameId);
@@ -106,7 +102,7 @@ class User
 
 
     // READ single
-    public function getSingleEmployee()
+    public function getSingleUser()
     {
         $sqlQuery = "SELECT
                         id, 

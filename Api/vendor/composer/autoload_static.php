@@ -17,11 +17,11 @@ class ComposerStaticInit7745b6462958cf3159a993e117ae44ca
     public static $prefixDirsPsr4 = array (
         'Config\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/../config',
+            0 => __DIR__ . '/../..' . '/config',
         ),
         'Classes\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/../class',
+            0 => __DIR__ . '/../..' . '/class',
         ),
     );
 

@@ -14,7 +14,7 @@ class Database extends PDO {
 
     private static $connection = null;
 
-     function __construct ( string $dns, string $username, string $password, ?array $options = null ) {
+    function __construct ( string $dns, string $username, string $password, ?array $options = null ) {
         parent::__construct ( $dns, $username, $password, $options );
     }
 
