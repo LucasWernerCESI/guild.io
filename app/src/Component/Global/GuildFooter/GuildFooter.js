@@ -2,17 +2,17 @@ import {Container, Divider, Typography} from "@material-ui/core";
 import React from "react";
 import { makeStyles } from "@material-ui/styles";
 
-const useStyles = makeStyles( {
+const useStyles = makeStyles( theme => ({
     footer: {
         position: "relative",
         bottom: "0",
-        marginBottom: "1.5%",
-        marginTop: "1.5%"
+        marginBottom: theme.spacing(1),
+        marginTop: theme.spacing(2)
     },
     footerDivider: {
-        marginBottom: "1.5%"
+        marginBottom: theme.spacing(1)
     }
-} )
+} ) )
 
 export function GuildFooter () {
 

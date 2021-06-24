@@ -4,36 +4,27 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    useHistory
+    Route
 } from "react-router-dom";
 import { Home } from "./Component/Layout/Home.js";
-import {Container, CssBaseline, Grid, useMediaQuery} from "@material-ui/core";
+import { Container, CssBaseline, Grid, useMediaQuery } from "@material-ui/core";
 import { GuildNavBar } from "./Component/Global/GuildNavBar/GuildNavBar";
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { GuildFooter } from "./Component/Global/GuildFooter/GuildFooter";
-import { Login } from "./Component/Layout/Login";
-import { Register } from "./Component/Layout/Register";
+import { Login } from "./Component/Layout/Login/Login";
+import { Register } from "./Component/Layout/Register/Register";
 import { Guild } from "./Component/Layout/Guild";
-import { Application } from "./Component/Layout/Application";
+import { Application } from "./Component/Layout/Application/Application";
 import { User } from "./Component/Layout/User";
-import { Support } from "./Component/Layout/Support";
+import { Support } from "./Component/Layout/Support/Support";
+import { NotFound } from "./Component/Layout/NotFound";
+import { AuthStatusController } from "./Component/Controller/AuthStatusController/AuthStatusController";
 
 function App() {
 
-    // Local Storage handling
-    const storage = localStorage;
+    localStorage.clear();
 
-    // Handle login requests and redirections
-    if( storage.getItem( "isLogged" ) === null || storage.getItem( "isLogged" ) === "0" ) {
-        storage.setItem( "isLogged", "1" );
-        storage.setItem( "userName", "Guest" );
-        storage.setItem( "hashedPwd", "" );
-    } else {
-
-    }
-
-    console.log( storage );
+    AuthStatusController();
 
     // DarkMode and Material Theming
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -42,16 +33,17 @@ function App() {
                 palette: {
                     type: 'dark',
                     text: {
-                        primary: "#FFFFFF",
-                        secondary: fade("#FFFFFF", .75),
-                        disabled: fade("#FFFFFF", .5)
+                        primary: fade("#FFFFFF", .75),
+                        secondary: fade("#FFFFFF", .5),
+                        disabled: fade("#FFFFFF", .25)
                     },
                     divider: fade("#FFFFFF", .15),
                     primary: {
-                        main: "#B9E464"
+                        main: "#B9E464",
+                        contrastText: "#464646"
                     },
                     secondary: {
-                        main: "#FFFFFF"
+                        main: "#464646"
                     },
                     background: {
                         default: "#464646",
@@ -65,12 +57,16 @@ function App() {
 
     return (
 
-        <ThemeProvider theme={theme}>
+        <ThemeProvider
+            theme={theme}
+        >
 
             <CssBaseline/>
             <Router>
 
-                <GuildNavBar pageList={["home", "guild", "support"]}/>
+                <GuildNavBar
+                    pageList={["home", "guild", "support"]}
+                />
 
                 <Container>
 
@@ -92,7 +88,7 @@ function App() {
                             <Guild/>
                         </Route>
 
-                        <Route exact path="/application">
+                        <Route exact path="/application/:guildId">
                             <Application/>
                         </Route>
 
@@ -103,6 +99,8 @@ function App() {
                         <Route exact path="/support">
                             <Support/>
                         </Route>
+
+                        <Route component={NotFound} />
 
                     </Switch>
 

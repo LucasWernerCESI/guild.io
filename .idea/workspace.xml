@@ -2,26 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="109875dd-cc49-4cbf-8bfe-7f3bc7c66155" name="Default Changelist" comment="[Implementation] Different routes and Login handler">
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Application/Application.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Login/LoginForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/NotFound.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Register/Register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Register/RegisterForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Support/Support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Support/SupportForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Misc/GuildActionsBox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Misc/GuildCardTitle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Misc/GuildDatePicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Misc/GuildForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Misc/GuildPwdInput.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Misc/GuildTextArea.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Misc/GuildTextInput.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildAccountIcon/GuildAccountIcon.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/DataHandler/AccessHandler/AccessHandler.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildAccountIcon/GuildAccountIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildAccountIcon/GuildAccountIcon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Application.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Support.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Support.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Register.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Support.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/Api/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -35,10 +51,23 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Api" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/Api/vendor/composer" />
+    </include_path>
   </component>
   <component name="ProjectId" id="1uFQBPXMjCSSf5QQnlyRLT4jh9H" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -56,6 +85,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/App" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.1.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -64,11 +94,11 @@
       <recent name="C:\Users\Proto\Desktop\Guild\guild.io\Api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Proto\Desktop\Guild\guild.io\App\src\Component\Layout\Application" />
+      <recent name="C:\Users\Proto\Desktop\Guild\guild.io\App\src\Component\Layout\Support" />
+      <recent name="C:\Users\Proto\Desktop\Guild\guild.io\App\src\Component\Layout\Register" />
+      <recent name="C:\Users\Proto\Desktop\Guild\guild.io\app\src\Component\Layout\Login" />
       <recent name="C:\Users\Proto\Desktop\Guild\guild.io\app\src\Component\Global\GuildAccountIcon" />
-      <recent name="C:\Users\Proto\Desktop\Guild\guild.io\app\src\Component\Global\GuildNavBar" />
-      <recent name="C:\Users\Proto\Desktop\Guild\guild.io\app\src\Component\Global\GuildFooter" />
-      <recent name="C:\Users\Proto\Desktop\Guild\guild.io\app\src\Component\Global" />
-      <recent name="C:\Users\Proto\Desktop\Guild\guild.io\app\src\Component\Layout" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -84,6 +114,10 @@
       <workItem from="1624261240469" duration="6106000" />
       <workItem from="1624343847855" duration="13227000" />
       <workItem from="1624430385561" duration="15510000" />
+      <workItem from="1624476943306" duration="102000" />
+      <workItem from="1624477067017" duration="674000" />
+      <workItem from="1624516965649" duration="28216000" />
+      <workItem from="1624549661110" duration="887000" />
     </task>
     <task id="LOCAL-00001" summary="[Organization] Directories creation">
       <created>1624258913488</created>

@@ -1,23 +1,23 @@
 import {
     Card,
-    CardActions,
     CardContent,
-    CardHeader,
-    Container, Divider,
     Grid,
-    makeStyles,
-    Paper,
-    Typography
+    makeStyles
 } from "@material-ui/core";
 import {useHistory} from "react-router-dom";
+import {RegisterForm} from "./RegisterForm";
+import {GuildCardTitle} from "../../Misc/GuildCardTitle";
+import {AccessController} from "../../Controller/AccessController/AccessController";
 
 const useStyles = makeStyles({
-    loginGrid:{
+    registerGrid: {
         height: "100%"
     }
 } );
 
-export function Login () {
+export function Register () {
+
+    AccessController();
 
     let history = useHistory();
     let storage = localStorage;
@@ -31,23 +31,22 @@ export function Login () {
             alignContent={"center"}
             alignItems={"center"}
             justify={"center"}
-            className={classes.loginGrid}
-
+            className={ classes.registerGrid }
         >
+
             <Grid item md={6} sm={9} xs={12}>
+
                 <Card>
                     <CardContent>
-                        <Typography variant={"h6"} color={"primary"}>
-                            CONNEXION
-                        </Typography>
-                        <Divider/>
-                        LogIn Inputs
-                    </CardContent>
-                    <CardActions>
 
-                    </CardActions>
+                        <GuildCardTitle title={"nouveau compte"} />
+                        <RegisterForm />
+
+                    </CardContent>
+
 
                 </Card>
+
             </Grid>
 
         </Grid>

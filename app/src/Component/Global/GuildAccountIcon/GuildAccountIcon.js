@@ -3,6 +3,7 @@ import React from "react";
 import { Box, IconButton, Switch } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/styles";
+import {log10} from "chart.js/helpers";
 
 const useStyles = makeStyles( {
     accountBox: {
@@ -19,44 +20,36 @@ export function GuildAccountIcon () {
     const classes = useStyles();
 
     const storage = localStorage;
+    const user = JSON.parse( storage.getItem( "user" ) );
 
     let history = useHistory();
 
-    const [isLogged, setIsLogged] = React.useState(
-        ( storage.getItem( "isLogged" ) === "0" )
-            ? false
-            : true
-    );
-
     const handleChange = ( ev, val ) => {
-        console.log(storage);
         switch ( val ) {
             case true:
-                history.push( "login" );
+                history.push( "/login" );
                 break;
 
             case false:
-                history.push( "" );
-                storage.setItem( "isLogged", "0" );
-                setIsLogged( false );
+                storage.setItem( "user", null );
+                window.location = '/login';
                 break;
         }
 
     };
 
     const handleClick = ( ev ) => {
-        history.push( "user" );
+        history.push( "/user" );
     };
 
     return (
         <Box className={ classes.accountBox }>
-                {
-                    isLogged &&
+                { user.isLogged &&
                     <IconButton onClick={ handleClick } aria-label="account">
                         <AccountCircleIcon fontSize={ "default" } color={ "secondary" } />
                     </IconButton>
                 }
-            <Switch value={ isLogged } checked={ isLogged } onChange={ handleChange }/>
+            <Switch value={ user.isLogged } checked={ user.isLogged } onChange={ handleChange }/>
         </Box>
     );
 

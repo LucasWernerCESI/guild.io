@@ -2,11 +2,11 @@ import { AppBar, Container, Tab, Tabs } from "@material-ui/core";
 import React from 'react';
 import { useHistory } from "react-router-dom";
 import { GuildAccountIcon } from "../GuildAccountIcon/GuildAccountIcon";
-import {makeStyles} from "@material-ui/styles";
+import { makeStyles } from "@material-ui/styles";
 
-const useStyles = makeStyles( {
+const useStyles = makeStyles( theme => ( {
     appBar: {
-        marginBottom: "1.5%"
+        marginBottom: theme.spacing(2)
     },
     navContainer: {
         display: "grid",
@@ -15,7 +15,7 @@ const useStyles = makeStyles( {
     tabsGroup: {
         width: "auto"
     }
-} )
+} ) );
 
 export function GuildNavBar ( { pageList } ) {
 
@@ -27,7 +27,7 @@ export function GuildNavBar ( { pageList } ) {
     // Changes the active tab and route
     const handleChange = ( ev, newVal ) => {
         setValue(newVal);
-        history.push( pageList[newVal] !== "home" ? pageList[newVal] : '' );
+        history.push( pageList[newVal] !== "home" ? '/' + pageList[newVal] : '/' );
     };
 
     // Generates as many nav tabs as we have entries in pageList
@@ -36,7 +36,7 @@ export function GuildNavBar ( { pageList } ) {
     return (
         <AppBar position="static" className={ classes.appBar }>
             <Container className={ classes.navContainer }>
-                <Tabs className={ classes.navContainer } indicatorColor="secondary" textColor="secondary" value={value} onChange={handleChange} aria-label="navigation tabs">
+                <Tabs className={ classes.navContainer } indicatorColor={"secondary"} value={value} onChange={handleChange} aria-label="navigation tabs">
                     { tabList }
                 </Tabs>
                 <GuildAccountIcon/>
