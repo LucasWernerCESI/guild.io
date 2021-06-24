@@ -3,7 +3,6 @@
 namespace Classes;
 
 
-use Classes\Database;
 use DateTime;
 use DateTimeZone;
 use PDO;

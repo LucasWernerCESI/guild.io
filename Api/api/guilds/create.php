@@ -3,7 +3,7 @@
 include_once('../../vendor/autoload.php');
 
 use Classes\Database;
-use Classes\User;
+use Classes\Guild;
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -15,16 +15,17 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 try {
 
-    $data = json_decode(file_get_contents("php://input"));
+    $receivedData = json_decode(file_get_contents("php://input"));  //input de php qui vient dur font en tant que json, $data récupère les infos du front en json qui représentent les infos nécessaires pour créer un utlisateur
 
-    $item = new User(Database::getConnection(), $data->pseudo,$data->email, "now", $data->password,$data->birthday,$data->guildId,  $data->gameId, $data->roleId, $data->languageId);
+    $item = new Guild(Database::getConnection(),$receivedData->name, $receivedData->text,$receivedData->blazon,"now", $receivedData->gameId);
 
     //var_dump($data);
 
-    if($item->createUser()){
-        echo "Utilisateur créé avec succès.";
+
+    if($item->createGuild()){
+        echo "Guilde créé avec succès.";
     } else{
-        echo "La création de l'utilisateur a échoué.";
+        echo "La création de la guilde a échoué.";
     }
 } catch (Exception $e) {
 }

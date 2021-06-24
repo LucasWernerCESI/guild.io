@@ -1,7 +1,10 @@
 <?php
 
+namespace Classes;
 
-use Classes\Database;
+use DateTime;
+use DateTimeZone;
+use PDO;
 
 class Guild
 {
@@ -39,6 +42,15 @@ class Guild
         $this->creationDate = new DateTime($creationDate, new DateTimeZone('Europe/Paris'));
     }
 
+
+    // GET ALL
+    public function getAllGuilds(){
+        $sqlQuery = "SELECT id, gameId, name, text, blazon, creationDate FROM " . $this->db_table ;
+        $stmt = $this->connection->prepare($sqlQuery);
+        $stmt->execute();
+        return $stmt;
+    }
+
     // CREATE
     public function createGuild()
     {
@@ -49,8 +61,7 @@ class Guild
                         name = :name, 
                         text = :text, 
                         blazon = :blazon, 
-                        creationDate = :creationDate,
-                        roleId = :roleId
+                        creationDate = :creationDate
                         ";
 
         $stmt = $this->connection->prepare($sqlQuery);
@@ -172,6 +183,5 @@ class Guild
         return false;
     }
 
-}
 
 }
