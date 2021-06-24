@@ -1,9 +1,9 @@
 <?php
 
+include_once('../../vendor/autoload.php');
+
 use Classes\Database;
 use Classes\User;
-
-include_once('../../vendor/autoload.php');
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -15,13 +15,13 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 try {
 
-    $data = json_decode(file_get_contents("php://input"));
+    $receivedData = json_decode(file_get_contents("php://input"));  //input de php qui vient dur font en tant que json, $data récupère les infos du front en json qui représentent les infos nécessaires pour créer un utlisateur
 
-    $item = new User(Database::getConnection(), $data->pseudo,$data->email, "now", $data->hashedPassword,$data->birthday,$data->guildId,  $data->gameId, $data->roleId, $data->languageId);
+    $item = new User(Database::getConnection(), $receivedData->pseudo,$receivedData->email, "now", password_hash($receivedData->password, PASSWORD_DEFAULT), $receivedData->birthday,$receivedData->guildId,  $receivedData->gameId, $receivedData->roleId, $receivedData->languageId);
+
+    //var_dump($data);
 
 
-
-    var_dump($data);
 
     if($item->createUser()){
         echo "Utilisateur créé avec succès.";

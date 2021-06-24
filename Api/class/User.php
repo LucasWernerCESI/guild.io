@@ -38,7 +38,7 @@ class User
      */
 
 
-    public function __construct(Database $connection, string $pseudo, string $email, string $creationDate, string $hashedPassword, string $birthday, int $guildId, int $gameId, int $roleId, int $languageId)
+    public function __construct(Database $connection, string $pseudo = "", string $email = "", string $creationDate = "", string $hashedPassword = "", string $birthday = "", ?int $guildId = null, ?int $gameId = null, ?int $roleId = null, ?int $languageId = null)
     {
         $this->connection = $connection;
         $this->pseudo = $pseudo;
@@ -50,6 +50,41 @@ class User
         $this->guildId = $guildId;
         $this->gameId = $gameId;
         $this->languageId = $languageId;
+    }
+
+    //AUTHENTIFICATION USER
+
+    public function verifyUser()
+    {
+        // requête SQL paramétrée = requête dynamique (on connait le corps mais pas les valeurs de la requête)
+
+        $sqlQuery = "SELECT
+                        id,
+                        hashedPassword
+                      FROM
+                        " . $this->db_table . "
+                    WHERE 
+                       pseudo = ?  
+                    LIMIT 0,1";
+
+        //    pseudo = ? --> lors de l'execution, est replacé par le pseudo de l'utilisateur
+
+        $stmt = $this->connection->prepare($sqlQuery);
+
+        // remplace mes paramètres
+        $stmt->bindParam(1, $this->pseudo);
+
+        $stmt->execute();
+
+        $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (password_verify($this->hashedPassword, $dataRow["hashedPassword"])) {
+
+            return $dataRow["id"];
+        } else {
+            return null ;
+        }
+
     }
 
     // CREATE
@@ -74,7 +109,6 @@ class User
         // sanitize
         $this->pseudo = htmlspecialchars(strip_tags($this->pseudo));
         $this->email = htmlspecialchars(strip_tags($this->email));
-        $this->hashedPassword = htmlspecialchars(strip_tags($this->hashedPassword));
         $this->roleId = htmlspecialchars(strip_tags($this->roleId));
         $this->guildId = htmlspecialchars(strip_tags($this->guildId));
         $this->gameId = htmlspecialchars(strip_tags($this->gameId));
@@ -94,6 +128,7 @@ class User
         $stmt->bindParam(":gameId", $this->gameId);
         $stmt->bindParam(":languageId", $this->languageId);
 
+
         if ($stmt->execute()) {
             return true;
         }
@@ -102,7 +137,7 @@ class User
 
 
     // READ single
-    public function getSingleUser()
+    public function getSingleUser($id)
     {
         $sqlQuery = "SELECT
                         id, 
@@ -123,12 +158,14 @@ class User
 
         $stmt = $this->connection->prepare($sqlQuery);
 
-        $stmt->bindParam(1, $this->id);
+        $stmt->bindParam(1, $id);
+
 
         $stmt->execute();
 
         $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
 
+        $this->id = $dataRow['id'];
         $this->pseudo = $dataRow['pseudo'];
         $this->email = $dataRow['email'];
         $this->birthday = $dataRow['birthday'];
@@ -162,7 +199,6 @@ class User
 
         $this->pseudo = htmlspecialchars(strip_tags($this->pseudo));
         $this->email = htmlspecialchars(strip_tags($this->email));
-        $this->hashedPassword = htmlspecialchars(strip_tags($this->hashedPassword));
         $this->roleId = htmlspecialchars(strip_tags($this->roleId));
         $this->guildId = htmlspecialchars(strip_tags($this->guildId));
         $this->gameId = htmlspecialchars(strip_tags($this->gameId));
