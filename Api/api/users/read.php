@@ -23,7 +23,7 @@ try {
 
     $receivedData = json_decode(file_get_contents("php://input"));
 
-    $item = new User(Database::getConnection(), $receivedData->pseudo, "", "now", $receivedData->password);
+    $item = new User(Database::getConnection(), $receivedData->username, "", "now", $receivedData->password);
 
 // Si les mdp ne correspondent pas alors verifyUser renvoie null s'ils correspondent alors verifyUser renvoie l'id de l'utilisateur a qui correspondond le mdp
 // !=   =  différent de null
@@ -35,8 +35,8 @@ try {
             // create array
             $user_arr = array(
                 "id" => $item->id,
-                "pseudo" => $item->pseudo,
-                "email" => $item->email,
+                "username" => $item->pseudo,
+                "mail" => $item->email,
                 "creationDate" => $item->creationDate,
                 "birthday" => $item->birthday,
                 "guildId" => $item->guildId,
@@ -47,14 +47,24 @@ try {
 
 
             http_response_code(200);
-            echo json_encode($user_arr);
+            echo json_encode([
+                "body" => $user_arr,
+                "code" => 200
+            ]);
         } else {
             http_response_code(404);
-            echo json_encode("User not found.");
+            echo json_encode([
+                "message" => "User not found.",
+                "code" => 404
+            ]);
         }
     }
 
 } catch (Exception $e) {
+    echo json_encode([
+        "message" => $e->getMessage(),
+        "code" => $e->getCode()
+    ]);
 }
 
 ?>

@@ -17,18 +17,26 @@ try {
 
     $receivedData = json_decode(file_get_contents("php://input"));  //input de php qui vient dur font en tant que json, $data récupère les infos du front en json qui représentent les infos nécessaires pour créer un utlisateur
 
-    $item = new User(Database::getConnection(), $receivedData->pseudo,$receivedData->email, "now", password_hash($receivedData->password, PASSWORD_DEFAULT), $receivedData->birthday,$receivedData->guildId,  $receivedData->gameId, $receivedData->roleId, $receivedData->languageId);
+    $item = new User(Database::getConnection(), $receivedData->username,$receivedData->mail, "now", password_hash($receivedData->password, PASSWORD_DEFAULT), $receivedData->birthday, 1,  $receivedData->game, 1, $receivedData->lang);
 
     //var_dump($data);
 
-
-
-    if($item->createUser()){
-        echo "Utilisateur créé avec succès.";
-    } else{
-        echo "La création de l'utilisateur a échoué.";
+    if( $item->createUser() ){
+        echo json_encode( [
+            "message" => "Utilisateur créé avec succès.",
+            "code" => 200
+        ] );
+    } else {
+        echo json_encode( [
+            "message" => "La création de l'utilisateur a échoué.",
+            "code" => 200
+        ] );
     }
 } catch (Exception $e) {
+    echo json_encode( [
+        "message" => $e->getMessage(),
+        "code" => $e->getCode()
+    ] );
 }
 
 
