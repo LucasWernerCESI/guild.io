@@ -27,7 +27,7 @@ export function GuildDatePicker ( { label, ...props } ) {
                 margin="normal"
                 id="date-picker-dialog"
                 label={ label }
-                format="dd/MM/yyyy"
+                format="dd-MM-yyyy"
                 value={ selectedDate }
                 onChange={ handleDateChange }
                 KeyboardButtonProps={{

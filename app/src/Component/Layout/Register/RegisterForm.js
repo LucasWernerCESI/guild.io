@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { GuildForm } from "../../Misc/GuildForm";
 import {GuildActionsBox} from "../../Misc/GuildActionsBox";
 import React from "react";
+import {FormController} from "../../Controller/FormController/FormController";
 
 export function RegisterForm () {
 
@@ -18,22 +19,67 @@ export function RegisterForm () {
         lang: 1,
         password: '',
         passwordConfirm: '',
-        birthday: ''
+        birthday: '01-01-1995'
     });
 
-    const handleLoginClick = () => {
+    const [errors, setErrors] = React.useState({
+        username: false,
+        mail: false,
+        game: false,
+        lang: false,
+        password: false,
+        passwordConfirm: false,
+        birthday: false
+    });
 
+    const [isRegistered, setIsRegistered] = React.useState( false );
+
+    const handleLoginClick = () => {
         history.push( "/login" );
     }
 
     const handleRegisterClick = ev => {
-        ev.preventDefault();
-        // storage.setItem( "isLogged", "1" );
-        // Handle ajax POST call
-        if( values.password === values.passwordConfirm ) {
-            window.location = "/";
-        } else {
 
+        ev.preventDefault();
+
+        const checkedForm = FormController( values, errors );
+
+        setErrors( checkedForm.errors );
+
+        for ( const [key, value] of Object.entries( checkedForm.errors ) ){
+            errors[key] = value;
+        }
+
+        if( checkedForm.isFormRdy ) {
+
+            console.log( values )
+
+            const endPoint = "http://localhost/guild/api/users/create";
+
+            const headers = new Headers();
+            headers.append( "Content-Type", "application/json")
+
+            const options = {
+                method: 'POST',
+                headers: headers,
+                mode: 'cors',
+                cache: 'default',
+                body: JSON.stringify( values )
+            }
+
+            // Handle ajax POST call
+            fetch( endPoint, options )
+                .then( response => response.json() )
+                .then( data => {
+
+                    if ( data.code === 200 ) {
+                        setIsRegistered( true );
+                        //history.push( '/login' );
+                    } else {
+                        console.log( data.message );
+                    }
+
+                } );
         }
     }
 
@@ -42,63 +88,85 @@ export function RegisterForm () {
         console.log( values );
     };
 
+    const handleDateChange = prop => ( ev, date ) => {
+        setValues({ ...values, [prop]: date });
+        console.log( date );
+    };
+
     return (
-        <GuildForm >
+        <>
 
-            <GuildTextInput
-                value={values.username}
-                onInput={ handleInput( 'username' ) }
-                label={ "Nom d'utilisateur" }
-            />
+            { ( ! isRegistered ) &&
 
-            <GuildTextInput
-                autoComplete={"no"}
-                value={values.mail}
-                onInput={ handleInput( 'mail' ) }
-                label={ "Mail" }
-            />
+            <GuildForm autoComplete="off">
 
-            <GuildPwdInput
-                autoComplete={"no"}
-                value={values.password}
-                onInput={ handleInput( 'password' ) }
-                label={ "Mot de passe" }
-                labelWidth={100}
-            />
+                <GuildTextInput
+                    value={ values.username }
+                    onInput={ handleInput( 'username' ) }
+                    label={ "Nom d'utilisateur" }
+                    error={ errors.username }
+                />
 
-            <GuildPwdInput
-                value={values.passwordConfirm}
-                onInput={ handleInput( 'passwordConfirm' ) }
-                label={ "Confirmer mot de passe" }
-                labelWidth={160}
-            />
+                <GuildTextInput
+                    autoComplete={"no"}
+                    value={values.mail}
+                    onInput={ handleInput( 'mail' ) }
+                    label={ "Mail" }
+                    error={ errors.mail }
+                />
 
-            <GuildDatePicker
-                onInput={ handleInput( 'birthday' ) }
-                label={ "Date de naissance" }
-            />
+                <GuildPwdInput
+                    autoComplete={"no"}
+                    value={values.password}
+                    onInput={ handleInput( 'password' ) }
+                    label={ "Mot de passe" }
+                    labelWidth={100}
+                    error={ errors.password }
+                />
 
-            <GuildActionsBox>
+                <GuildPwdInput
+                    value={ values.passwordConfirm }
+                    onInput={ handleInput( 'passwordConfirm' ) }
+                    label={ "Confirmer mot de passe" }
+                    labelWidth={160}
+                    error={ errors.passwordConfirm }
+                />
 
-                <Button
-                    type={"submit"}
-                    onClick={ handleRegisterClick }
-                    variant={ "contained" }
-                    disableElevation color={ "primary" }
-                >
-                    Inscription
-                </Button>
+                <GuildDatePicker
+                    value={ values.birthday }
+                    onInput={ handleDateChange( 'birthday' ) }
+                    onChange={ handleDateChange( 'birthday' ) }
+                    label={ "Date de naissance" }
+                />
 
-                <Button
-                    onClick={ handleLoginClick }
-                    variant={ "outlined" }
-                    color={ "primary" }
-                >
-                    Connexion
-                </Button>
+                <GuildActionsBox>
 
-            </GuildActionsBox>
+                    <Button
+                        type={"submit"}
+                        onClick={ handleRegisterClick }
+                        variant={ "contained" }
+                        disableElevation color={ "primary" }
+                    >
+                        Inscription
+                    </Button>
 
-        </GuildForm>
+                    <Button
+                        onClick={ handleLoginClick }
+                        variant={ "outlined" }
+                        color={ "primary" }
+                    >
+                        Connexion
+                    </Button>
+
+                </GuildActionsBox>
+
+            </GuildForm>
+
+            }
+
+            { isRegistered &&
+                "Votre compte a bien été enregistré. Vous pouvez désormais vous connecter."
+            }
+        </>
     )
 }
