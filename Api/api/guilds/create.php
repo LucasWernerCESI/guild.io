@@ -17,7 +17,7 @@ try {
 
     $receivedData = json_decode(file_get_contents("php://input"));  //input de php qui vient dur font en tant que json, $data récupère les infos du front en json qui représentent les infos nécessaires pour créer un utlisateur
 
-    $item = new Guild(Database::getConnection(),$receivedData->name, $receivedData->text,$receivedData->blazon,"now", $receivedData->gameId);
+    $item = new Guild(Database::getConnection(),null, $receivedData->name, $receivedData->text,$receivedData->blazon,"now", $receivedData->gameId);
 
     //var_dump($data);
 

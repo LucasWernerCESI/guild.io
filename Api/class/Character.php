@@ -2,26 +2,25 @@
 
 namespace Classes;
 
-use DateTime;
-use DateTimeZone;
 use PDO;
 
-class Guild
+class Character
 {
 
     // Connection
     private $connection;
 
     // Table
-    private $db_table = "guilds";
+    private $db_table = "characters";
 
     // Columns
     public $id;
-    public $gameId;
-    public $name;
-    public $text;
-    public $blazon;
-    public $creationDate;
+    public $userId ;
+    public $raceId ;
+    public $level;
+    public $professionId ;
+    public $classId ;
+    public $factionId  ;
 
 
     // Db connection
@@ -32,54 +31,50 @@ class Guild
      */
 
 
-    public function __construct(Database $connection, string $name = "", string $text = "", string $blazon = "", string $creationDate = "", ?int $gameId = null)
+    public function __construct(Database $connection,?int $userId = null, ?int $raceId = null, ?int $level = null, ?int $professionId = null, ?int $classId = null, ?int $factionId = null)
     {
         $this->connection = $connection;
-        $this->gameId = $gameId;
-        $this->name = $name;
-        $this->text = $text;
-        $this->blazon = $blazon;
-        $this->creationDate = new DateTime($creationDate, new DateTimeZone('Europe/Paris'));
+        $this->userId = $userId;
+        $this->raceId = $raceId;
+        $this->level = $level;
+        $this->professionId = $professionId;
+        $this->classId = $classId;
+        $this->factionId = $factionId;
     }
 
-
-    // GET ALL
-    public function getAllGuilds(){
-        $sqlQuery = "SELECT id, gameId, name, text, blazon, creationDate FROM " . $this->db_table ;
-        $stmt = $this->connection->prepare($sqlQuery);
-        $stmt->execute();
-        return $stmt;
-    }
 
     // CREATE
-    public function createGuild()
+    public function createCharacter()
     {
         $sqlQuery = "INSERT INTO
                         " . $this->db_table . "
                     SET 
-                        gameId = :gameId,
-                        name = :name, 
-                        text = :text, 
-                        blazon = :blazon, 
-                        creationDate = :creationDate
+                        userId = :userId,
+                        raceId = :raceId, 
+                        level = :level, 
+                        professionId = :professionId, 
+                        classId = :classId,
+                        factionId = :factionId
                         ";
 
         $stmt = $this->connection->prepare($sqlQuery);
 
         // sanitize
-        $this->gameId = htmlspecialchars(strip_tags($this->gameId));
-        $this->name = htmlspecialchars(strip_tags($this->name));
-        $this->text = htmlspecialchars(strip_tags($this->text));
-        $this->blazon = htmlspecialchars(strip_tags($this->blazon));
+        $this->userId = htmlspecialchars(strip_tags($this->userId));
+        $this->raceId = htmlspecialchars(strip_tags($this->raceId));
+        $this->level = htmlspecialchars(strip_tags($this->level));
+        $this->professionId = htmlspecialchars(strip_tags($this->professionId));
+        $this->classId = htmlspecialchars(strip_tags($this->classId));
+        $this->factionId = htmlspecialchars(strip_tags($this->factionId));
 
-        $dateCreationDate = $this->creationDate->format('Y-m-d H:i:s');
 
         // bind data
-        $stmt->bindParam(":gameId", $this->gameId);
-        $stmt->bindParam(":name", $this->name);
-        $stmt->bindParam(":text", $this->text);
-        $stmt->bindParam(":blazon", $this->blazon);
-        $stmt->bindParam(":creationDate", $dateCreationDate);
+        $stmt->bindParam(":userId", $this->userId);
+        $stmt->bindParam(":raceId", $this->raceId);
+        $stmt->bindParam(":level", $this->level);
+        $stmt->bindParam(":professionId", $this->professionId);
+        $stmt->bindParam(":classId", $this->classId);
+        $stmt->bindParam(":factionId", $this->factionId);
 
         if ($stmt->execute()) {
             return true;
@@ -89,7 +84,7 @@ class Guild
 
 
     // READ single
-    public function getSingleGuild()
+    public function getSingleCharacter()
     {
         $sqlQuery = "SELECT
                         id,
@@ -101,12 +96,12 @@ class Guild
                       FROM
                         " . $this->db_table . "
                     WHERE 
-                       name = ?
+                       id = ?
                     LIMIT 0,1";
 
         $stmt = $this->connection->prepare($sqlQuery);
 
-        $stmt->bindParam(1, $this->name);
+        $stmt->bindParam(1, $this->id);
 
         $stmt->execute();
 
