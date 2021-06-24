@@ -60,8 +60,7 @@ export function LoginForm () {
                             ...data.body,
                             isLogged: true
                         } ) );
-                        console.log( storage )
-                        //window.location = "/";
+                        window.location = "/";
                     } else {
                         console.log( data.message );
                     }
