@@ -1,35 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="109875dd-cc49-4cbf-8bfe-7f3bc7c66155" name="Default Changelist" comment="[Implementation] Different routes and Login handler">
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Application/Application.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Login/LoginForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/NotFound.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Register/Register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Register/RegisterForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Support/Support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Support/SupportForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Misc/GuildActionsBox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Misc/GuildCardTitle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Misc/GuildDatePicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Misc/GuildForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Misc/GuildPwdInput.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Misc/GuildTextArea.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Misc/GuildTextInput.js" afterDir="false" />
+    <list default="true" id="109875dd-cc49-4cbf-8bfe-7f3bc7c66155" name="Default Changelist" comment="[Implementation] Main form components written">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/DataHandler/AccessHandler/AccessHandler.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildAccountIcon/GuildAccountIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildAccountIcon/GuildAccountIcon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildFooter/GuildFooter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Global/GuildNavBar/GuildNavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Application.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Register.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Support.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +90,7 @@
       <workItem from="1624476943306" duration="102000" />
       <workItem from="1624477067017" duration="674000" />
       <workItem from="1624516965649" duration="28216000" />
-      <workItem from="1624549661110" duration="887000" />
+      <workItem from="1624549661110" duration="1128000" />
     </task>
     <task id="LOCAL-00001" summary="[Organization] Directories creation">
       <created>1624258913488</created>
@@ -182,7 +155,21 @@
       <option name="project" value="LOCAL" />
       <updated>1624448046260</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="[Implementation] Access and Auth controllers">
+      <created>1624550652021</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1624550652021</updated>
+    </task>
+    <task id="LOCAL-00011" summary="[Implementation] Main form components written">
+      <created>1624550699428</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1624550699428</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +196,8 @@
     <MESSAGE value="[Organization] Layouts and global components structure + Router" />
     <MESSAGE value="[Packages] Material UI Icons Install" />
     <MESSAGE value="[Implementation] Different routes and Login handler" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Implementation] Different routes and Login handler" />
+    <MESSAGE value="[Implementation] Access and Auth controllers" />
+    <MESSAGE value="[Implementation] Main form components written" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Implementation] Main form components written" />
   </component>
 </project>
