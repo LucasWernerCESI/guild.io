@@ -15,7 +15,7 @@ import { Login } from "./Component/Layout/Login/Login";
 import { Register } from "./Component/Layout/Register/Register";
 import { Guild } from "./Component/Layout/Guild";
 import { Application } from "./Component/Layout/Application/Application";
-import { User } from "./Component/Layout/User";
+import { User } from "./Component/Layout/User/User";
 import { Support } from "./Component/Layout/Support/Support";
 import { NotFound } from "./Component/Layout/NotFound";
 import { AuthStatusController } from "./Component/Controller/AuthStatusController/AuthStatusController";
@@ -66,7 +66,7 @@ function App() {
                     pageList={["home", "guild", "support"]}
                 />
 
-                <Container>
+                <Container style={{ height: "100%" }}>
 
                     <Switch>
 

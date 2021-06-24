@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="109875dd-cc49-4cbf-8bfe-7f3bc7c66155" name="Default Changelist" comment="[Implementation] Access control implementation in main routes">
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Controller/FormController/FormController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="109875dd-cc49-4cbf-8bfe-7f3bc7c66155" name="Default Changelist" comment="[Implementation] Login and Registration connected to API">
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/User/User.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/User/UserInfoBox.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Register/RegisterForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Register/RegisterForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Misc/GuildDatePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Misc/GuildDatePicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Login/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Login/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/User.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,11 +72,11 @@
       <recent name="C:\Users\Proto\Desktop\Guild\guild.io\Api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Proto\Desktop\Guild\guild.io\App\src\Component\Layout\User" />
       <recent name="C:\Users\Proto\Desktop\Guild\guild.io\App\src\Component\Controller\AjaxController" />
       <recent name="C:\Users\Proto\Desktop\Guild\guild.io\App\src\Component\Layout\Application" />
       <recent name="C:\Users\Proto\Desktop\Guild\guild.io\App\src\Component\Layout\Support" />
       <recent name="C:\Users\Proto\Desktop\Guild\guild.io\App\src\Component\Layout\Register" />
-      <recent name="C:\Users\Proto\Desktop\Guild\guild.io\app\src\Component\Layout\Login" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -181,7 +181,21 @@
       <option name="project" value="LOCAL" />
       <updated>1624550826972</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="[Implementation] Login and Registration connected to API">
+      <created>1624572120002</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1624572120002</updated>
+    </task>
+    <task id="LOCAL-00014" summary="[Implementation] Login and Registration connected to API">
+      <created>1624572153221</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1624572153221</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +225,19 @@
     <MESSAGE value="[Implementation] Access and Auth controllers" />
     <MESSAGE value="[Implementation] Main form components written" />
     <MESSAGE value="[Implementation] Access control implementation in main routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Implementation] Access control implementation in main routes" />
+    <MESSAGE value="[Implementation] Login and Registration connected to API" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Implementation] Login and Registration connected to API" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/App/src/Component/Layout/User/UserInfoBox.js</url>
+          <line>12</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
