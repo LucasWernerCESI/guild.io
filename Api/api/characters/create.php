@@ -18,10 +18,9 @@ try {
 
     $receivedData = json_decode(file_get_contents("php://input"));  //input de php qui vient dur font en tant que json, $data récupère les infos du front en json qui représentent les infos nécessaires pour créer un utlisateur
 
-    $item = new Character(Database::getConnection(),null, $receivedData->userId, $receivedData->raceId,$receivedData->level, $receivedData->professionId, $receivedData->classId,$receivedData->factionId);
+    $item = new Character(Database::getConnection(), $receivedData->name,null, $receivedData->userId, $receivedData->raceId,$receivedData->lvl, $receivedData->professionId, $receivedData->classId,$receivedData->factionId);
 
-   // var_dump($item);
-
+    // var_dump($item);
 
     if($item->createCharacter()){
         echo "Personnage créé avec succès.";
@@ -29,6 +28,7 @@ try {
         echo "La création du personnage a échoué.";
     }
 } catch (Exception $e) {
+    echo $e->getMessage();
 }
 
 

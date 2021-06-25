@@ -15,13 +15,17 @@ class Character
 
     // Columns
     public $id;
+    public $name;
     public $userId ;
     public $raceId ;
+    public $race;
     public $level;
     public $professionId ;
+    public $profession;
     public $classId ;
+    public $class;
     public $factionId  ;
-
+    public $faction;
 
     // Db connection
 
@@ -31,10 +35,11 @@ class Character
      */
 
 
-    public function __construct(Database $connection, ?int $id = null, ?int $userId = null, ?int $raceId = null, ?int $level = null, ?int $professionId = null, ?int $classId = null, ?int $factionId = null)
+    public function __construct(Database $connection, ?string $name = null, ?int $id = null, ?int $userId = null, ?int $raceId = null, ?int $level = null, ?int $professionId = null, ?int $classId = null, ?int $factionId = null)
     {
         $this->connection = $connection;
         $this->id = $id;
+        $this->name = $name;
         $this->userId = $userId;
         $this->raceId = $raceId;
         $this->level = $level;
@@ -45,9 +50,12 @@ class Character
 
 
     // GET ALL
-    public function getAllCharacters(){
-        $sqlQuery = "SELECT id, userId, raceId, level, professionId, classId, factionId FROM " . $this->db_table ;
+    public function getAllCharacters( $guildId ){
+        $sqlQuery = "SELECT id, name, userId, raceId, level, professionId, classId, factionId FROM " . $this->db_table . " WHERE guildId = :guildId";
         $stmt = $this->connection->prepare($sqlQuery);
+        // bind data
+        $stmt->bindParam(":guildId", $guildId);
+
         $stmt->execute();
         return $stmt;
     }
@@ -60,6 +68,7 @@ class Character
                     SET 
                         userId = :userId,
                         raceId = :raceId, 
+                        name = :name,
                         level = :level, 
                         professionId = :professionId, 
                         classId = :classId,
@@ -70,6 +79,7 @@ class Character
 
         // sanitize
         $this->userId = htmlspecialchars(strip_tags($this->userId));
+        $this->name = htmlspecialchars(strip_tags($this->name));
         $this->raceId = htmlspecialchars(strip_tags($this->raceId));
         $this->level = htmlspecialchars(strip_tags($this->level));
         $this->professionId = htmlspecialchars(strip_tags($this->professionId));
@@ -79,6 +89,7 @@ class Character
 
         // bind data
         $stmt->bindParam(":userId", $this->userId);
+        $stmt->bindParam(":name", $this->name);
         $stmt->bindParam(":raceId", $this->raceId);
         $stmt->bindParam(":level", $this->level);
         $stmt->bindParam(":professionId", $this->professionId);
@@ -91,39 +102,47 @@ class Character
         return false;
     }
 
-
     // READ single
     public function getSingleCharacter()
     {
         $sqlQuery = "SELECT
-                        id,
-                        userId, 
-                        raceId, 
-                        level, 
-                        professionId, 
-                        classId,
-                        factionId
+                        characters.id as id,
+                        characters.name as name,
+                        races.name as race, 
+                        characters.level as lvl, 
+                        professions.name as profession, 
+                        classes.name as class,
+                        factions.name as faction
                       FROM
                         " . $this->db_table . "
+                        JOIN races
+                            ON characters.raceId = races.id
+                        JOIN professions
+                            ON characters.professionId = professions.id
+                        JOIN classes
+                            ON characters.classId = classes.id
+                        JOIN factions
+                            ON characters.factionId = factions.id
                     WHERE 
-                       id = ?
+                       characters.userId = ?
                     LIMIT 0,1";
 
         $stmt = $this->connection->prepare($sqlQuery);
 
-        $stmt->bindParam(1, $this->id);
+        $stmt->bindParam(1, $this->userId);
 
         $stmt->execute();
 
         $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
 
         $this->id = $dataRow['id'];
-        $this->userId = $dataRow['userId'];
-        $this->raceId = $dataRow['raceId'];
-        $this->level = $dataRow['level'];
-        $this->professionId = $dataRow['professionId'];
-        $this->classId = $dataRow['classId'];
-        $this->factionId = $dataRow['factionId'];
+        $this->name = $dataRow['name'];
+        $this->race = $dataRow['race'];
+        $this->level = $dataRow['lvl'];
+        $this->profession = $dataRow['profession'];
+        $this->class = $dataRow['class'];
+        $this->faction = $dataRow['faction'];
+
     }
 
     // UPDATE
