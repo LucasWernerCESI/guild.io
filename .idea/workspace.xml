@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="109875dd-cc49-4cbf-8bfe-7f3bc7c66155" name="Default Changelist" comment="[Implementation] Login and Registration connected to API">
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/User/User.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/User/UserInfoBox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Guild/Guild.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/Home/Home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/User/UserCharSheet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Component/Layout/User/UserCreateCharBtn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Login/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Login/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/User.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Guild.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/Register/RegisterForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/Register/RegisterForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Component/Layout/User/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Component/Layout/User/User.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,11 +76,11 @@
       <recent name="C:\Users\Proto\Desktop\Guild\guild.io\Api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Proto\Desktop\Guild\guild.io\App\src\Component\Layout\Home" />
+      <recent name="C:\Users\Proto\Desktop\Guild\guild.io\App\src\Component\Layout\Guild" />
       <recent name="C:\Users\Proto\Desktop\Guild\guild.io\App\src\Component\Layout\User" />
       <recent name="C:\Users\Proto\Desktop\Guild\guild.io\App\src\Component\Controller\AjaxController" />
       <recent name="C:\Users\Proto\Desktop\Guild\guild.io\App\src\Component\Layout\Application" />
-      <recent name="C:\Users\Proto\Desktop\Guild\guild.io\App\src\Component\Layout\Support" />
-      <recent name="C:\Users\Proto\Desktop\Guild\guild.io\App\src\Component\Layout\Register" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -234,7 +238,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/App/src/Component/Layout/User/UserInfoBox.js</url>
           <line>12</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

@@ -6,14 +6,14 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-import { Home } from "./Component/Layout/Home.js";
+import { Home } from "./Component/Layout/Home/Home.js";
 import { Container, CssBaseline, Grid, useMediaQuery } from "@material-ui/core";
 import { GuildNavBar } from "./Component/Global/GuildNavBar/GuildNavBar";
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { GuildFooter } from "./Component/Global/GuildFooter/GuildFooter";
 import { Login } from "./Component/Layout/Login/Login";
 import { Register } from "./Component/Layout/Register/Register";
-import { Guild } from "./Component/Layout/Guild";
+import { Guild } from "./Component/Layout/Guild/Guild";
 import { Application } from "./Component/Layout/Application/Application";
 import { User } from "./Component/Layout/User/User";
 import { Support } from "./Component/Layout/Support/Support";
@@ -21,6 +21,8 @@ import { NotFound } from "./Component/Layout/NotFound";
 import { AuthStatusController } from "./Component/Controller/AuthStatusController/AuthStatusController";
 
 function App() {
+
+    //localStorage.clear();
 
     AuthStatusController();
 

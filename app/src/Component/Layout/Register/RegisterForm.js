@@ -52,8 +52,6 @@ export function RegisterForm () {
 
         if( checkedForm.isFormRdy ) {
 
-            console.log( values )
-
             const endPoint = "http://localhost/guild/api/users/create";
 
             const headers = new Headers();
@@ -76,7 +74,7 @@ export function RegisterForm () {
                         setIsRegistered( true );
                         //history.push( '/login' );
                     } else {
-                        console.log( data.message );
+                        //console.log( data.message );
                     }
 
                 } );

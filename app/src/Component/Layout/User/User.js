@@ -4,6 +4,7 @@ import {GuildCardTitle} from "../../Misc/GuildCardTitle";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import React from "react";
 import {UserInfoBox} from "./UserInfoBox";
+import {UserCharSheet} from "./UserCharSheet";
 
 const useStyles = makeStyles(theme => ({
     fullHeight: {
@@ -21,6 +22,11 @@ const useStyles = makeStyles(theme => ({
         flexDirection: "column",
         gap: theme.spacing(2),
         marginTop: theme.spacing(2)
+    },
+    charSheet: {
+        display: 'flex',
+        alignItems: "center",
+        justifyContent: "center"
     }
 } ) );
 
@@ -29,8 +35,6 @@ export function User () {
     AccessController();
 
     let user = JSON.parse( localStorage.getItem( "user" ) );
-
-    const [hasCharacters, setHasCharacters] = React.useState()
 
     const classes = useStyles();
 
@@ -64,7 +68,6 @@ export function User () {
                             <UserInfoBox label={"Création du compte"} value={user.creationDate} />
                         </Box>
 
-
                     </CardContent>
 
 
@@ -78,12 +81,9 @@ export function User () {
                     className={ classes.fullHeight }
                 >
                     <CardContent
-                        className={ classes.fullHeight }
+                        className={ classes.fullHeight + ' ' + classes.charSheet }
                     >
-
-                        {
-
-                        }
+                        <UserCharSheet/>
 
                     </CardContent>
 
